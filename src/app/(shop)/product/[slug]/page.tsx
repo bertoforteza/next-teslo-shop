@@ -4,13 +4,12 @@ import { getProductBySlug } from "@/actions";
 import {
   ProductMobileSlideShow,
   ProductSlideShow,
-  QuantitySelector,
-  SizeSelector,
   StockLabel,
 } from "@/components";
 import { titleFont } from "@/config/fonts";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AddToCart } from "./ui/AddToCart";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -37,7 +36,6 @@ export async function generateMetadata({
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
-  console.log(product);
 
   if (!product) {
     notFound();
@@ -72,14 +70,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         <p className="text-lg mb-5">${product.price}</p>
 
-        <SizeSelector
-          selectedSize={product.sizes[0]}
-          availableSizes={product.sizes}
-        />
-
-        <QuantitySelector quantity={2} />
-
-        <button className="btn-primary my-5">Agregar al carrito</button>
+        <AddToCart product={product} />
 
         <h3 className="font-bold text-sm">Descripción</h3>
         <p className="font-light">${product.description}</p>
