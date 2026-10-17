@@ -8,6 +8,10 @@ export * from "./auth/register";
 
 export * from "./country/getCountries";
 
+export * from "./order/place-order";
+export * from "./order/get-order-by-id";
+export * from "./order/get-orders-by-user";
+
 export * from "./products/products-pagination";
 export * from "./products/get-product-by-slug";
 export * from "./products/get-stock-by-slug";

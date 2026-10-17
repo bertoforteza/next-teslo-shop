@@ -49,8 +49,8 @@ export const AddressForm: React.FC<AddressFormProps> = ({
   const storeAddress = useAddressStore((state) => state.address);
 
   const onSubmit = async (data: FormInputs) => {
-    setAddress(data);
     const { rememberAddress, ...restAddress } = data;
+    setAddress(restAddress);
 
     if (rememberAddress && session?.user.id) {
       await setUserAddress(restAddress, session?.user.id);
