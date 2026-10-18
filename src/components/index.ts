@@ -1,6 +1,10 @@
 export * from "./products/products-grid/ProductsGrid";
 export * from "./products/products-grid/ProductGridItem";
 
+export * from "./orders/OrderStatus";
+
+export * from "./paypal/PaypalButton";
+
 export * from "./product/slideshow/ProductSlideShow";
 export * from "./product/slideshow/ProductMobileSlideShow";
 export * from "./product/quantity-selector/QuantitySelector";
@@ -14,4 +18,4 @@ export * from "./ui/top-menu/TopMenu";
 export * from "./ui/footer/Footer";
 export * from "./ui/pagination/Pagination";
 
-export * from "./provider/Provider";
+export * from "./providers/Providers";
